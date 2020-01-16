@@ -39,10 +39,10 @@ def run_webcam():
             print("Body Key Points: \n" + str(datum.poseKeypoints))
             out_video.write(imageToProcess)
             count += 1
-           # cv2.imshow("OpenPose 1.5.1 - Tutorial Python API", datum.cvOutputData)
-           # key = cv2.waitKey(15)
-           # if key == 27:
-            #    break
+            cv2.imshow("OpenPose 1.5.1 - Tutorial Python API", datum.cvOutputData)
+            key = cv2.waitKey(1)
+            if key == ord('q'):
+                break
     out_video.release()
     cv2.destroyAllWindows()
     cap.release()
